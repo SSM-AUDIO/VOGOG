@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>VOGOG - macOS</title>
+<style>body{margin:0;font:16px/1.6 system-ui,Arial,sans-serif;color:#1d2026;background:#fff}main{max-width:780px;margin:0 auto;padding:20px}h1,h2{border-bottom:2px solid #2f6bd0;padding-bottom:4px}pre{background:#eef0f4;padding:10px;border-radius:6px;overflow-x:auto}@media(prefers-color-scheme:dark){body{background:#16181c;color:#e8eaee}pre{background:#262a31}}</style></head>
+<body><main><h1>VOGOG on macOS</h1>
+<h2>English</h2>
+<ul><li>Installer will not open: right-click it, <b>Open</b>, <b>Open</b>. Or <b>System Settings, Privacy &amp; Security, Open Anyway</b>.</li>
+<li>DAW does not show the plugin: click <b>Open Anyway</b> next to the message about VOGOG, then rescan. Or in Terminal:</li></ul>
+<pre>xattr -dr com.apple.quarantine "/Library/Audio/Plug-Ins/VST3/VOGOG.vst3"</pre>
+<h2>Русский</h2>
+<ul><li>Установщик не открывается: правый щелчок, <b>Открыть</b>, <b>Открыть</b>. Или <b>Системные настройки, Конфиденциальность и безопасность, Всё равно открыть</b>.</li>
+<li>DAW не показывает плагин: нажмите <b>Всё равно открыть</b> у сообщения про VOGOG и пересканируйте. Или в Терминале:</li></ul>
+<pre>xattr -dr com.apple.quarantine "/Library/Audio/Plug-Ins/VST3/VOGOG.vst3"</pre>
+</main></body></html>
