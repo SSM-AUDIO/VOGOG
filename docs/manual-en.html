@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VOGOG — User Manual</title>
+<style>
+  :root { color-scheme: light dark; --ink:#1d2026; --muted:#5d6572; --line:#d9dce2; --accent:#2f6bd0; --panel:#eef3fb; --warn:#fff5e0; --warnline:#e0a030; --tip:#e6f4ec; --tipline:#3c9a63; --code:#eceef2; --bg:#fff; }
+  @media (prefers-color-scheme: dark) { :root { --ink:#e8eaee; --muted:#9aa0ac; --line:#343840; --accent:#6ea0ff; --panel:#23262b; --warn:#3a3020; --tip:#1d3328; --code:#2b2e34; --bg:#16181c; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 "Segoe UI", system-ui, Arial, sans-serif; }
+  header.top { background:#17191d; color:#fff; padding:28px 20px; text-align:center; }
+  header.top h1 { margin:0; font-size:34px; letter-spacing:.03em; border:none; color:#fff; }
+  header.top .sub { color:#6ea0ff; font-size:18px; margin-top:4px; }
+  header.top .ver { color:#9aa0ac; font-size:14px; margin-top:8px; }
+  header.top a { color:#cfd2da; }
+  main { max-width:860px; margin:0 auto; padding:10px 20px 60px; }
+  h1 { font-size:26px; margin:46px 0 12px; padding-bottom:6px; border-bottom:2px solid var(--accent); }
+  h2 { font-size:19px; margin:28px 0 8px; color:var(--accent); }
+  p { margin:0 0 12px; } ul, ol { margin:0 0 14px; padding-left:24px; } li { margin-bottom:5px; }
+  code { font-family:Consolas, "Courier New", monospace; font-size:14px; background:var(--code); padding:1px 6px; border-radius:4px; }
+  table { border-collapse:collapse; width:100%; margin:8px 0 18px; font-size:15px; }
+  th, td { border:1px solid var(--line); padding:7px 10px; vertical-align:top; text-align:left; }
+  th { background:var(--panel); font-weight:600; }
+  .tip, .warn { padding:10px 14px; margin:14px 0; border-left:4px solid; border-radius:4px; }
+  .tip { background:var(--tip); border-color:var(--tipline); } .warn { background:var(--warn); border-color:var(--warnline); }
+  figure { margin:16px 0; text-align:center; } figure img { max-width:100%; height:auto; border-radius:8px; border:1px solid var(--line); }
+  figcaption { font-size:13px; color:var(--muted); margin-top:6px; }
+  nav.toc { background:var(--panel); border-radius:10px; padding:14px 22px; margin:20px 0; columns:2; column-gap:30px; } nav.toc a { color:inherit; text-decoration:none; display:block; padding:2px 0; }
+  footer { border-top:1px solid var(--line); margin-top:50px; padding-top:16px; color:var(--muted); font-size:14px; }
+  @media (max-width:640px) { nav.toc { columns:1; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>VOGOG</h1>
+  <div class="sub">User Manual</div>
+  <div class="ver">Version 1.0.0 · free VST3 plugin by SSM-Audio · Windows 10/11 · <a href="manual-ru.html">Русская версия</a></div>
+</header>
+<main>
+
+<nav class="toc">
+  <a href="#about">1. About</a>
+  <a href="#install">2. Installation</a>
+  <a href="#activate">3. Activation</a>
+  <a href="#quick">4. Quick start</a>
+  <a href="#window">5. The window</a>
+  <a href="#settings">6. The gear menu</a>
+  <a href="#daw">7. Notes for the DAW</a>
+  <a href="#trouble">8. Troubleshooting</a>
+  <a href="#legal">9. Legal and privacy</a>
+</nav>
+
+<h1 id="about">1. About</h1>
+<p>VOGOG is a free high-pass filter for the low end, made for kicks, bass and any sound where the lowest octave should be tight and clean. It cuts the rumble under the music and, if you want, adds a resonant lift at the corner so that the low end stays punchy. It has no delay (zero latency), works in stereo and has only three controls.</p>
+<p>VOGOG is the <b>GOG</b> stage of the full VOGOG chain, taken out into a plugin of its own.</p>
+
+<h1 id="install">2. Installation</h1>
+<ol>
+  <li>Close your DAW. Run <code>VOGOG-…-Setup.exe</code>. The installer puts <code>VOGOG.vst3</code> into <code>C:\Program Files\Common Files\VST3</code>.</li>
+  <li>Open your DAW and rescan plugins. VOGOG appears among the VST3 effects (manufacturer SSM-Audio).</li>
+  <li>To remove it, use “Apps” in Windows settings. The installer asks whether to delete the settings too.</li>
+</ol>
+
+<h1 id="activate">3. Activation</h1>
+<p>VOGOG is free, but every computer has to be activated once, over the internet:</p>
+<ol>
+  <li>Put the plugin on a track. Until it is activated, the sound passes through unchanged and the window shows a panel.</li>
+  <li>Type your e-mail address, and press <b>Activate</b>. The plugin sends the address, a code of your computer (not the hardware id itself), the name of your DAW, the version of the plugin, the operating system and your country to the server of SSM-Audio. Your audio is never sent.</li>
+  <li>The panel disappears and the plugin works. The plugin asks the server again at every start and about every 12 hours, so keep the internet on from time to time. A short break does not stop it.</li>
+</ol>
+<figure><img src="images/gog_activation.png" alt="The activation panel" width="244"><figcaption>The activation panel: e-mail, a note on what it is used for, and the button.</figcaption></figure>
+<div class="warn"><b>If the plugin stops.</b> If the activation is revoked, or the computer is blocked, the sound passes unchanged and the panel appears again. Press Activate again (a blocked computer cannot activate). If the panel says that this version is too old, download the new version from the site: old versions are switched off after a notice period of 30 days.</div>
+<div class="tip"><b>Your e-mail.</b> It is used to write to you about VOGOG and its new versions, and is not given to third parties. Ask us to delete it at any time. Details: see “Legal and privacy”.</div>
+
+<h1 id="quick">4. Quick start</h1>
+<ol>
+  <li>Put VOGOG first on the track of a kick or bass.</li>
+  <li>Turn <b>frequency</b> until the rumble below the music is gone: the numbers on the scale show the real corner frequency of the filter in Hz.</li>
+  <li>Turn <b>amplitude</b> to give the corner more (turn right) or less (turn left) resonance. In the middle the filter is plain; to the right it lifts the frequencies just above the corner.</li>
+  <li>If you need to cut more, press <b>x2</b>: the corner frequency doubles.</li>
+</ol>
+
+<h1 id="window">5. The window</h1>
+<figure><img src="images/gog_window.png" alt="The window of VOGOG" width="244"><figcaption>The window of VOGOG.</figcaption></figure>
+<table>
+  <tr><th>Control</th><th>What it does</th></tr>
+  <tr><td><b>amplitude</b></td><td>The resonance (Q) of the filter at its corner: from 0 (gentle) to 9 (strong), the middle is the neutral setting. It changes the shape of the corner, not its frequency.</td></tr>
+  <tr><td><b>frequency</b></td><td>The corner frequency, about 21 Hz (left), 42 Hz (middle) and 62 Hz (right); the scale shows the real value in Hz.</td></tr>
+  <tr><td><b>x2</b></td><td>Doubles the corner frequency (the light is green when it is on).</td></tr>
+</table>
+<ul>
+  <li><b>Knobs:</b> drag up or down. Hold <code>Shift</code> for fine steps. The mouse wheel works too. A double click returns the knob to its default.</li>
+  <li>While the mouse is over a knob, its value is shown in place of its name.</li>
+  <li><b>Size:</b> drag the corner at the bottom right to make the window larger or smaller.</li>
+  <li>The bypass of your DAW switches the plugin off completely.</li>
+</ul>
+
+<h1 id="settings">6. The gear menu</h1>
+<p>The gear at the bottom right opens the menu:</p>
+<ul>
+  <li><b>Manual (English / Russian)</b> — opens this manual.</li>
+  <li><b>Video lessons (YouTube)</b> — the channel of SSM-Audio with video lessons.</li>
+  <li><b>Website</b> — the site of SSM-Audio.</li>
+  <li><b>Write to the developer (Telegram)</b> — questions and ideas.</li>
+  <li><b>Check for updates</b> — asks the site for the newest version. A red dot on the gear means that a new version is available.</li>
+  <li><b>Send anonymous statistics</b> — a tick means that the plugin may send anonymous usage statistics (version, DAW, operating system, country, how often it starts; never audio or e-mail). The plugin asks once after the activation; you can change your mind here at any time.</li>
+  <li><b>Activation status...</b> — shows whether the plugin is activated and lets you check with the server right now.</li>
+  <li><b>Interface scale</b> — the size of the window: 75, 100, 125, 150 or 200 %. It is saved with the project.</li>
+  <li><b>About VOGOG</b> — the version and the credits. Click the logo for the same.</li>
+</ul>
+<p>From time to time SSM-Audio may show a short message in the window of the plugin (for example about a new version). It is shown once.</p>
+
+<h1 id="daw">7. Notes for the DAW</h1>
+<ul>
+  <li>VST3, 64-bit, stereo in and out. Zero latency: no delay compensation is needed.</li>
+  <li>VOGOG works only in a DAW (REAPER, Cubase, Studio One, Ableton Live, FL Studio, Bitwig, Reason and others). In a test or utility program the sound passes unchanged.</li>
+  <li>The settings are saved with your project.</li>
+</ul>
+
+<h1 id="trouble">8. Troubleshooting</h1>
+<table>
+  <tr><th>Problem</th><th>What to do</th></tr>
+  <tr><td>The plugin is not in the list</td><td>Rescan plugins in your DAW. Check that <code>VOGOG.vst3</code> is in <code>C:\Program Files\Common Files\VST3</code>.</td></tr>
+  <tr><td>The sound is unchanged and the panel is shown</td><td>Activate the plugin (section 3).</td></tr>
+  <tr><td>“No connection to the server”</td><td>Check the internet and the firewall, and press the button again.</td></tr>
+  <tr><td>“Too many attempts”</td><td>Wait a few minutes and try again.</td></tr>
+  <tr><td>“This computer cannot activate VOGOG”</td><td>The computer was blocked. Write to us (Telegram, see the menu).</td></tr>
+  <tr><td>“Not a known DAW”</td><td>VOGOG works only in a DAW. Tell us the name of your program if it is a real DAW.</td></tr>
+</table>
+
+<h1 id="legal">9. Legal and privacy</h1>
+<p>VOGOG is licensed, not sold; see the licence agreement in the installer. The plugin uses the JUCE framework (© Raw Material Software Limited) and TweetNaCl (public domain). VST is a trademark of Steinberg Media Technologies GmbH. The privacy policy of SSM-Audio is on the site (the link “Privacy policy” in the activation panel).</p>
+
+<footer>VOGOG 1.0.0 · © 2026 SSM-Audio</footer>
+</main>
+</body>
+</html>
